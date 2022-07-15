@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    master:
+      hikari:
+        jdbc-url: jdbc:mysql://192.168.100.129:3306/idus?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul
+        username: master_user
+        password: qwer1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+    slave:
+      hikari:
+        jdbc-url: jdbc:mysql://192.168.100.130:3306/idus?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=Asia/Seoul
+        username: slave_user
+        password: qwer1234
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always
+jwt:
+  header: Authorization
+  secret: aWR1c21pbmppZGtkbGVsZGp0bXdsc1drcmtyaHRsdmVrZGxyamRrZmRrcWhzbXN0a2ZrYWRsVGRtZlJrcm1mamFjanN3bwo=
+  access-token-validity-in-seconds: 3600
+  refresh-token-validity-in-seconds: 86400
+
